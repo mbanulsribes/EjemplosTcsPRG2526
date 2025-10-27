@@ -1,153 +1,158 @@
-
-/**
- * Ejemplo App.java
- * Este programa muestra conceptos básicos de Java:
- * comentarios, variables, constantes, operadores, entrada/salida, condicionales.
- */
-
-import java.util.Scanner; // Importación para entrada por teclado
+import java.util.Scanner;
 
 public class UT4_1 {
+    //TC UT4_1
+    // Archivo: App.java
+    // ------------------------------------------------------------
+    // Ejemplos completos de bucles for, while y do-while en Java
+    // con explicaciones, lectura de usuario y ejercicios propuestos.
+    //    
+    // ------------------------------------------------------------
+
     public static void main(String[] args) {
-        // Comentario de una línea
-    
-        /* Comentario
-           de varias líneas */
+        // Scanner único para toda la app (lo pasaremos a los métodos que lo necesiten)
+        Scanner sc = new Scanner(System.in);
 
-        /** Comentario de documentación
-         * Método principal del programa
-         */
+        System.out.println("\n==============================");
+        System.out.println("   EJEMPLOS DE BUCLES EN JAVA  ");
+        System.out.println("==============================\n");
 
-        // Declaración y definición de variables
-        int edad = 20; // Variable entera (número entero)
-        double altura = 1.75; // Variable decimal
-        String nombre = "Adelaida"; // Variable tipo String
+        ejemploForBasico();
+        ejemploWhileBasico();
+        ejemploDoWhileBasico();
+        ejemploForAnidado();
+        ejemploLecturaUsuarioConWhile(sc);
+        ejemploMenuDoWhile(sc);
 
-        // Constante
-        final double PI = 3.1416;
+        // Cerrar el Scanner al final del programa
+        sc.close();
 
-        
-        /*  NOMENCLATURA DE VARIABLES
-        
-        Palabras clave prohibidas: no se pueden usar como nombres de variables
-            ❌ class, int, public, static → están reservadas
-
-        No puede comenzar con un número
-            ❌ 1edad → Error
-            ✅ edad1 → Correcto
-
-        Puede contener letras, números, _ y $ (no lo usamos)
-            ✅ nombre_usuario, precioTotal, $_valor 
-
-        No puede contener espacios ni caracteres especiales
-            ❌ nombre usuario, precio-total    
-
-        */
-
-        //  BUENAS PRÁCTICAS
-         // 1. camelCase para variables
-            int edadUsuario;
-            double precioTotal;
-            String nombreCompleto;
-
-         // 2. MAYÚSCULAS para constantes  
-            final int MAX_USUARIOS = 100;
-        
-         //3. Nombres descriptivos
-            int numeroDeAlumnos;
-            String mensajeDeBienvenida;
-        
-
-        /*EJERCICIO: Corrige los nombres incorrectos */
-            //int 1edad;
-            double alturaUsuario;
-            //String nombre completo;
-            boolean esMayorDeEdad; //es_mayor_de_edad;// 
-            //int class;
-            final double PII = 3.1416;
-            String nombre1; 
-            int contador;
-
-        // Operadores aritméticos
-        int suma = edad + 5;
-        int resta = edad - 2;
-        int producto = edad * 2;
-        double division = edad / 2.0;
-        int modulo = edad % 3;
-
-        // Operadores de incremento/decremento
-        edad++; // edad = edad + 1
-        edad--; // edad = edad - 1
-  
-        // Concatenación de Strings
-        String saludo = "Hola " + nombre;
-
-        // Operadores relacionales
-        boolean esMayor = edad > 18;
-        boolean esIgual = edad == 20;
-
-        // Operadores lógicos
-        boolean condicion = (edad > 18 && altura > 1.70) || nombre.equals("Adelaida");
-                            //(T &&          T)            ||T
-                            //T||T
-
-        // Operadores de asignación
-        edad += 5; // edad = edad + 5
-        edad -=1; // edad = edad -1
-
-        // Funciones matemáticas
-        
-        double potencia = Math.pow(2.0, 3.0); // 2^3
-        double raiz = Math.sqrt(16.0); // raíz cuadrada
-        double constanteE = Math.E; //numero irracional 2.718281828459045
-        
-
-        // Entrada por teclado
-        Scanner entrada = new Scanner(System.in); 
-        System.out.print("Introduce tu edad: ");
-        edadUsuario = entrada.nextInt();
-
-        // Salida por pantalla
-        System.out.println("Tu edad es: " + edadUsuario);
-
-        // Condicionales
-        if (edadUsuario >= 18) {
-            System.out.println("Eres mayor de edad.");
-        } else {
-            System.out.println("Eres menor de edad.");
-        }
-        //forma compacta de condicional
-        System.out.println(edadUsuario >= 18 ? "Eres mayor de edad." : "Eres menor de edad.");
-
-
-        //condicional
-        String mensaje="";
-        if (edadUsuario >= 18) {
-                mensaje="es mayor de edad.";
-            } else {
-                mensaje= "Eres menor de edad.";
-            }
-          //forma compacta
-          mensaje = (edadUsuario >= 18) ? "Eres mayor de edad." : "Eres menor de edad.";  
-
-        // Switch-case
-        System.out.print("Introduce un número del 1 al 3: ");
-        int opcion = entrada.nextInt();
-
-        switch (opcion) {
-            case 1:  //opcion==1 
-                System.out.println("Elegiste uno.");
-                break;
-            case 2: //opcion ==2
-                System.out.println("Elegiste dos.");
-                break;
-            case 3: //opcion==3
-                System.out.println("Elegiste tres.");
-                break;
-            default:
-                System.out.println("Opción no válida.");
-        }
-
-       // entrada.close(); // Cerramos el Scanner
+        System.out.println("\nFin de la demostración. ¡Buen estudio!\n");
     }
+
+    // ------------------------------------------------------------
+    // EJEMPLO 1: FOR BÁSICO
+    // Se usa cuando conocemos el número de iteraciones por adelantado.
+    // Estructura: for (inicialización; condición; actualización) { bloque }
+    // ------------------------------------------------------------
+    static void ejemploForBasico() {
+       
+        System.out.println("=== FOR básico: contar del 1 al 5 ===");
+
+        for (int i = 1; i <= 5; i++) { // i++ equivale a i = i + 1
+            System.out.println("FOR -> i = " + i);
+        }
+        System.out.println();
+    }
+
+    // ------------------------------------------------------------
+    // EJEMPLO 2: WHILE BÁSICO
+    // Ejecuta el bloque MIENTRAS la condición sea verdadera.
+    // OJO: si la condición nunca cambia a false, se crea un bucle infinito.
+    // ------------------------------------------------------------
+    static void ejemploWhileBasico() {
+        System.out.println("=== WHILE básico: contar del 1 al 5 ===");
+        int j = 1; // inicialización antes del while
+        while (j <= 5) { // se evalúa ANTES de entrar al bloque
+            System.out.println("WHILE -> j = " + j);
+            j++; // actualización dentro del bloque
+        }
+        System.out.println();
+    }
+
+    // ------------------------------------------------------------
+    // EJEMPLO 3: DO-WHILE BÁSICO
+    // Ejecuta el bloque AL MENOS UNA VEZ, porque la condición se evalúa al final.
+    // ------------------------------------------------------------
+    static void ejemploDoWhileBasico() {
+        System.out.println("=== DO-WHILE básico: contar del 1 al 5 ===");
+        int k = 1;
+        do { // se ejecuta primero
+            System.out.println("DO-WHILE -> k = " + k);
+            k++;
+        } while (k <= 5); // luego se evalúa la condición
+        System.out.println();
+    }
+
+    // ------------------------------------------------------------
+    // EJEMPLO 4: FOR ANIDADO (nesting)
+    // Demostración con un pequeño "triángulo" de asteriscos.
+    // ------------------------------------------------------------
+    static void ejemploForAnidado() {
+        System.out.println("=== FOR anidado: triángulo de asteriscos ===");
+        int filas = 5;
+        for (int fila = 1; fila <= filas; fila++) { // bucle externo: controla filas
+            for (int col = 1; col <= fila; col++) { // bucle interno: controla columnas
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+   
+
+    // ------------------------------------------------------------
+    // EJEMPLO 6: Lectura del usuario + WHILE
+    // Pedimos un entero positivo y calculamos la suma 1..N con while.
+    // Incluye validación sencilla.
+    // ------------------------------------------------------------
+    static void ejemploLecturaUsuarioConWhile(Scanner sc) {
+        System.out.println("=== Lectura de usuario con WHILE ===");
+
+        int n;
+        System.out.print("Introduce un entero positivo (N): ");
+        n = sc.nextInt();
+
+        // Validación: mientras N sea <= 0, volvemos a pedirlo
+        while (n <= 0) {
+            System.out.print("N debe ser > 0. Inténtalo de nuevo: ");
+            n = sc.nextInt();
+        }
+
+        int suma = 0;
+        int contador = 1;
+        while (contador <= n) {
+            suma += contador;
+            contador++;
+        }
+        System.out.println("Suma de 1.." + n + " = " + suma + "\n");
+    }
+
+    // ------------------------------------------------------------
+    // EJEMPLO 7: Menú interactivo con DO-WHILE
+    // Repite el menú hasta que el usuario elija salir (opción 0).
+    // ------------------------------------------------------------
+static void ejemploMenuDoWhile(Scanner sc) {
+    System.out.println("=== Menú con DO-WHILE ===");
+    int opcion;
+    do {
+        System.out.println("\n--- MENÚ ---");
+        System.out.println("1) Sumar dos números");
+        System.out.println("2) Restar dos números");
+        System.out.println("0) Salir");
+        System.out.print("Elige una opción: ");
+        opcion = sc.nextInt();
+
+        if (opcion == 1) {
+            System.out.print("a = ");
+            int a = sc.nextInt();
+            System.out.print("b = ");
+            int b = sc.nextInt();
+            System.out.println("Resultado: " + (a + b));
+        } else if (opcion == 2) {
+            System.out.print("a = ");
+            int a = sc.nextInt();
+            System.out.print("b = ");
+            int b = sc.nextInt();
+            System.out.println("Resultado: " + (a - b));
+        } else if (opcion == 0) {
+            System.out.println("Saliendo del menú...");
+        } else {
+            System.out.println("Opción no válida. Intenta de nuevo.");
+        }
+    } while (opcion != 0);
+    System.out.println();
+}
+
 }

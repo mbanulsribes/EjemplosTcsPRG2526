@@ -7,7 +7,7 @@ Aquest repositori conté exemples de codi en Java utilitzats en les TCs per al m
 Els exemples estan organitzats per temes, seguint l'estructura del mòdul:
 
 - `TC_UT3_3`: Primers passos amb Java
-- `02_Variables`: Tipus de dades i variables
+- `TC_UT4_1`: Tipus de dades i variables
 
 
 ## 🛠 Requisits
