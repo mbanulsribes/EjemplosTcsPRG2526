@@ -8,6 +8,7 @@ Els exemples estan organitzats per temes, seguint l'estructura del mòdul:
 
 - `TC_UT3_3`: Primers passos amb Java
 - `TC_UT4_1`: Tipus de dades i variables
+-  `TC_UT4_4`: Exercici 7
 
 
 ## 🛠 Requisits
