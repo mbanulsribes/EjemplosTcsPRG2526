@@ -17,5 +17,6 @@ Els exemples estan organitzats per temes, seguint l'estructura del mòdul:
 1. Clona el repositori al teu equip:
 
    ```bash
-   git clone https://github.com/tu-usuari/EjerciciosProgramacion.git
+   git clone https://github.com/mbanulsribes/EjemplosTcsPRG2526.git
+   ```
   
