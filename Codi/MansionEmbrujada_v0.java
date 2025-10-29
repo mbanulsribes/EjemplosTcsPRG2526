@@ -25,7 +25,7 @@ Requisitos:
 
 ------------------------------------------------------------
 */
-public class MansionEmbrujada {
+public class MansionEmbrujada_v0 {
     public static void main(String[] args) {
         //crear la variables scannerpara leer por pantalla
         
