@@ -27,11 +27,11 @@ public class UT6_1 {
             op = sc.nextInt();
             switch (op) {
                 case 1:
-                 
+
                     int valor1 = 4, valor2 = 6;
-                       sumar1(valor1, valor2);
+                    sumar1(valor1, valor2);
                     /*sumar1(4,6) */
-                    
+
                     break;
             
                 default:
