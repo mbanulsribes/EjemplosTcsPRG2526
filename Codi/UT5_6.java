@@ -2,6 +2,8 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
+import java.util.Random;
+import java.util.Scanner;
 import java.util.Stack;
 
 public class UT5_6 {
@@ -21,9 +23,9 @@ public static void main(String[] args) {
         10 - <1,10000>
         
         */
-        for(int i=0, i<10;i++){
+        for(int i=0; i<10;i++){
               HashMap<Integer, Integer> puntuacions = new HashMap<>();
-            resultats.put(i+1,puntuacions)
+              resultats.put(i + 1, puntuacions);
         }
           /* resultats
         0 -<,>
@@ -45,7 +47,7 @@ public static void main(String[] args) {
 
         // a) Inicialitzar amb valors aleatoris
         for (int pregunta = 1; pregunta <= 10; pregunta++) {
-            HashMap<Integer, Integer> puntuacions = new HashMap<>();
+           // HashMap<Integer, Integer> puntuacions = new HashMap<>();
             for (int puntuacio = 1; puntuacio <= 5; puntuacio++) {
                 // Generem un recompte d'usuaris aleatori entre 0 i 5
                 puntuacions.put(puntuacio, rand.nextInt(6));
@@ -82,5 +84,8 @@ public static void main(String[] args) {
 
         double mitjana = (totalRespostes > 0) ? (suma / totalRespostes) : 0;
         System.out.println("Mitjana = " + String.format("%.2f", mitjana));
+ 
     }
+
+ 
 }
