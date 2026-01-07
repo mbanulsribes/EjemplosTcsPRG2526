@@ -19,7 +19,7 @@ public class UT5_5 {
 
         for (String p : paraules) {
             contador.put(p, p.length());
-            p
+            
         }
         /*contador
         ------------------
